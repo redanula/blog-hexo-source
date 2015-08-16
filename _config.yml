@@ -3,12 +3,37 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-author: John Doe
-language:
+title: Redanula's Blog
+subtitle: 
+description: 
+author: Redanula
+language: zh-Hans
 timezone:
+
+# Social links
+social:
+  github: https://github.com/redanula
+  weibo: http://weibo.com/redanula
+
+#百度统计
+baidu_analytics: cd0419a7cec497e5e5d0831c0c0d58c9
+
+#评论
+duoshuo_shortname: Redanula
+# 多说热评文章 true 或者 false
+#duoshuo_hotartical: false
+
+#headimg
+avatar: /images/avatar.jpg
+
+# Swiftype Search Key
+swiftype_key: nxUVom3vECYwEssxwyny
+
+#rrs feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,7 +88,9 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: next
+stylus:
+  compress: true
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
