@@ -1,6 +1,6 @@
 title: UITableView-and-UIActivityIndicatorView 同页面的设置
 date: 2015-11-26 00:01:59
-tags: markdown
+tags: UITableView 
 ---
 
 备注，后面再细致研究原因。
