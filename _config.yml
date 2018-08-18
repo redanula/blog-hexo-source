@@ -19,7 +19,7 @@ social:
 baidu_analytics: cd0419a7cec497e5e5d0831c0c0d58c9
 
 #评论
-duoshuo_shortname: Redanula
+# duoshuo_shortname: Redanula
 # 多说热评文章 true 或者 false
 #duoshuo_hotartical: false
 
@@ -94,6 +94,8 @@ stylus:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
+## git@github.com:redanula/redanula.github.com.git
 deploy:
   type: git
-  repo: git@github.com:redanula/redanula.github.com.git
+  repo: git@93.179.98.230:blog.git
+  branch: master
