@@ -95,6 +95,7 @@ stylus:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 ## git@github.com:redanula/redanula.github.com.git
+## git@93.179.98.230:blog.git
 deploy:
   type: git
   repo: git@93.179.98.230:blog.git
