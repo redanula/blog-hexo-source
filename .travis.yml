@@ -25,7 +25,7 @@ after_script:
   - git checkout master
   - cd ../
   - mv .deploy_git/.git/ ./public/   # 这一步之前的操作是为了保留master分支的提交记录，不然每次git init的话只有1条commit
-  - rsync -rv --delete -e 'ssh -o stricthostkeychecking=no -p 27935' public/ git@www.yanglangjing.com:/var/www/blog
+  - rsync -rv --delete -e 'ssh -o stricthostkeychecking=no -p 27935' public/ root@www.yanglangjing.com:/var/www/blog
   - cd ./public
   - git config user.name "redanula"  #修改name
   - git config user.email "yanglangjing@hotmail.com"  #修改email
