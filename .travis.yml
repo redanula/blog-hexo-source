@@ -9,7 +9,7 @@ cache:
 
 before_install:
     - export TZ='Asia/Shanghai' # 更改时区
-    - openssl aes-256-cbc -K $encrypted_3624fc9aaf00_key -iv $encrypted_3624fc9aaf00_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+    - openssl aes-256-cbc -K $encrypted_383bc2ea2d21_key -iv $encrypted_383bc2ea2d21_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
     - chmod 600 ~/.ssh/id_rsa
     - echo -e "Host 93.179.98.230\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 install:
