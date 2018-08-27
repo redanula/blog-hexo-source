@@ -3,6 +3,6 @@ date: 2018-08-23 22:12:15
 tags: [Travis CI]
 ---
 
-关闭Git的Bash权限后测试
+打开Git的Bash权限后测试
 
 
