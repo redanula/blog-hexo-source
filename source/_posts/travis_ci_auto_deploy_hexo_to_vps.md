@@ -3,25 +3,25 @@ date: 2018-08-28 12:00:00
 tags: [Travis CI, Hexo]
 ---
 
-###1.写在前面 
+### 写在前面 
 >N久之前在GitHub Page上部署了Hexo，本地生成文章的时候需要`hexo g&&hexo d`等步骤才能上传到GitHub，最近又把博客折腾到了VPS上，手动deploy到VPS的同时又不能更新GitHub上，因此搜索了一下解决方案，发现可以实现git flow push到source后，使用Travis CI 持续集成自动deploy到GitHub Page，同时推送到VPS服务器。
 
-###2.构建流程
+### 构建流程
 
-####基本准备：
+#### 基本准备：
 
 * GitHub Source 即博客源码仓库，以下称为Source
 * GitHub Page 静态页仓库
 * 配置好Nginx，git等环境的VPS
       
-####构建流程如下：
+#### 构建流程如下：
 
 1. 新增或修改了文章，push到GitHub的source
 2. Travis CI 发现source改变后自动执行配置好的脚本，生成静态页面
 3. Travis 推送静态页面文件到VPS服务器
 4. Travis push静态页面到GitHub
 
-###3.GitHub 和 Travis 设置
+### GitHub 和 Travis 设置
 
 因为之前已经建好Blog的仓库和GitHub Page的仓库了，这些网上都很多教程，并不复杂，就直接记录如何让Source的仓库和Travis关联的步骤：
 
@@ -33,10 +33,6 @@ tags: [Travis CI, Hexo]
     ![](/images/15354230831184.jpg)
 
 3. 选择Personal access tokens，生成Travis需要的access token
-
-
-
-
     ![](/images/15354231182717.jpg)
 
 4. 填写一个token的描述，如hexoblog，选择repo，然后Generate token即可
@@ -46,7 +42,7 @@ tags: [Travis CI, Hexo]
 5. 这里要复制下生成的token（只允许看见一次），在Travis那边可以使用
      ![](/images/15354239349022.jpg)
 
-6. 打开[Travis](https://travis-ci.org)网站(https://travis-ci.org)，org后缀的才是对GitHub Public仓库免费的，com的针对是付费的私有仓库的。使用GitHub账号登录。
+6. 打开 [Travis](https://travis-ci.org) 网站(https://travis-ci.org) ,org后缀的才是对GitHub Public仓库免费的，com的针对是付费的私有仓库的。使用GitHub账号登录。
     
     ![](/images/15354244967581.jpg)
 
@@ -55,7 +51,7 @@ iv和key是后面VPS那边自动生成的，这里可以先忽略。配置完以
 ![](/images/15354245505828.jpg)
 
 
-###4.本地配置
+### 本地配置
 
 1. 在本地Blog根目录下新建.travis.yml文件，配置如下：
     其中`github.com/redanula/redanula.github.com.git`为GitHub Page的仓库，`HEXO_TOKEN`为Travis刚刚Travis配置的token的标识。
@@ -101,17 +97,15 @@ iv和key是后面VPS那边自动生成的，这里可以先忽略。配置完以
     ![](/images/15354264456856.jpg)
 
 
-###5.VPS服务器配置
+### VPS服务器配置
 
 1. ssh登录VPS服务器，安装Travis服务
-
-   先安装ruby 如果提示如下：
-   current directory: /var/lib/gems/2.3.0/gems/ffi-1.9.25/ext/ffi_c
-   /usr/bin/ruby2.3 -r ./siteconf20180821-29696-1onq3fa.rb extconf.rb
+先安装ruby 如果提示如下：
+current directory: /var/lib/gems/2.3.0/gems/ffi-1.9.25/ext/ffi_c
+/usr/bin/ruby2.3 -r ./siteconf20180821-29696-1onq3fa.rb extconf.rb
 mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
 需要安装对应的ruby包:
 
-        
         # 如果是在centos等系统下面，执行命令：
         yum install ruby-devel 
 
@@ -183,7 +177,6 @@ mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
          
         - rsync -rv --delete -e 'ssh -o stricthostkeychecking=no -p 对应ssh端口' public/ git@对应的IP或域名:/var/www/blog
         
-    
     这里注意`~/.ssh/id_rsa`路径需要去掉travis命令自动添加的转义 \\ 这里的key和iv文件就是上文图中Travis后台自动出现的两个值
     
         openssl aes-256-cbc -K $encrypted_598a070685f0_key -iv $encrypted_598a070685f0_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
@@ -198,7 +191,7 @@ mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
     
         Done. Your build exited with 0.
         
-###6.参考文章
+### 参考文章
 
 [Hexo - 使用 Travis CI 自動佈署 Blog](https://skychang.github.io/2017/01/01/Hexo-Use_Travis_CI_Auto_Deploy_Blog/)
 [使用 Travis 自动部署 Hexo 到 Github 与 自己的服务器](https://segmentfault.com/a/1190000009054888)
