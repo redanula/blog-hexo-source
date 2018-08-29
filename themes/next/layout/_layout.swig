@@ -94,5 +94,13 @@
       });
     });
   </script>
+
+  <!-- 线条 -->
+  {% if theme.canvas_nest %}
+  <script type="text/javascript" color="176,196,222" opacity='0.7' zIndex="-2" count="70" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  {% endif %}
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
 </body>
 </html>

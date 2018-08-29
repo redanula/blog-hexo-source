@@ -108,3 +108,11 @@ duoshuo_share: false
 
 # Disqus 
 disqus_shortname: redanula
+
+# --------------------------------------------------------------
+# background settings
+# --------------------------------------------------------------
+# add canvas-nest effect
+# see detail from https://github.com/hustcc/canvas-nest.js
+canvas_nest: true
+

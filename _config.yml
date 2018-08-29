@@ -100,3 +100,24 @@ deploy:
   type: git
   repo: git@93.179.98.230:blog.git
   branch: master
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  log: false
+  model:
+    use: live2d-widget-model-hijiki
+  display:
+    position: right
+    width: 100
+    height: 200
+  react:
+    opacityDefault: 1
+    opacityOnHover: 0.2
+  mobile:
+    show: true
+    scale: 0.5
