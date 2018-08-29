@@ -119,5 +119,5 @@ live2d:
     opacityDefault: 1
     opacityOnHover: 0.2
   mobile:
-    show: true
+    show: false
     scale: 0.5
