@@ -154,6 +154,6 @@ tags: [Python,Python爬虫,链家]
 对BeautifulSoup的方法还不太熟悉，用的都是简单粗暴的方法，后续再去细看了。
 
 爬下来的数据：
-	![](images/imgdata.png)
+	![](/images/imgdata.png)
 	
 
